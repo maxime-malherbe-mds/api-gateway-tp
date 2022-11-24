@@ -7,7 +7,7 @@ import { MetricsModule } from './metrics/metrics.module';
 
 @Module({
   imports: [UsersModule, AuthModule, MetricsModule],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
