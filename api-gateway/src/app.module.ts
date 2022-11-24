@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { CacheModule, CACHE_MANAGER, Inject, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
@@ -22,8 +22,14 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       synchronize: true,
       autoLoadEntities: true,
     }),
+    CacheModule.register({
+      ttl: 60,
+      max: 100,
+      isGlobal: true,
+    }),
   ],
   controllers: [UsersController],
   providers: [],
 })
-export class AppModule {}
+export class AppModule {
+}

@@ -1,8 +1,9 @@
-import { Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { CacheInterceptor, Controller, Delete, Get, Param, Patch, Post, UseInterceptors } from '@nestjs/common';
 import { User } from './entities/user.entity';
 import { UsersService } from './users.service';
 
 @Controller('users')
+@UseInterceptors(CacheInterceptor)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
