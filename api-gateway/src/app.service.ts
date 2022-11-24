@@ -5,6 +5,6 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'Hello World!';
+    return 'Hello Test!';
   }
 }
